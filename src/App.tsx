@@ -1,34 +1,8 @@
 import { useEffect, useState } from 'react'
+import { Launch } from '../src/types/Launch'
+import { ChevronDown, ChevronUp } from 'lucide-react'
+import LaunchCard from './components/LaunchCard' // adjust path if different
 
-type Launch = {
-  id: string
-  name: string
-  net: string
-  image: string | null
-  pad: {
-    name: string
-    location: { name: string }
-  }
-  mission: {
-    type: string
-    description: string
-  }
-}
-
-function LaunchCard({ launch }: { launch: Launch }) {
-  return (
-    <div className="bg-gray-800 rounded-xl overflow-hidden shadow-lg">
-      {launch.image && <img src={launch.image} alt={launch.name} className="w-full h-32 object-cover" />}
-      <div className="p-4">
-        <h2 className="text-xl font-semibold">{launch.name}</h2>
-        <p className="text-sm text-gray-400">{launch.net}</p>
-        <p className="text-sm text-gray-500">{launch.pad.name}, {launch.pad.location.name}</p>
-        <p className="text-sm text-gray-500">{launch.mission.type}</p>
-        <p className="text-sm text-gray-500">{launch.mission.description}</p>
-      </div>
-    </div>
-  )
-}
 
 export default function App() {
   const [launches, setLaunches] = useState<Launch[]>([])
@@ -40,7 +14,7 @@ export default function App() {
   }, [])
 
   return (
-    <div className="min-h-screen bg-gray-950 text-white p-6">
+    <div className="min-h-screen text-white p-6">
       <h1 className="text-3xl font-bold mb-6 text-center text-cyan-400">🚀 Space Launch Tracker</h1>
       <h3 className="text-3xl font-bold mb-6 text-center text-cyan-400">By: Matthew Sperry</h3>
       <br/>
