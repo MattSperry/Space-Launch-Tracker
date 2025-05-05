@@ -1,6 +1,5 @@
 import { useEffect, useState } from 'react'
 import { Launch } from '../src/types/Launch'
-import { ChevronDown, ChevronUp } from 'lucide-react'
 import LaunchCard from './components/LaunchCard' // adjust path if different
 
 
