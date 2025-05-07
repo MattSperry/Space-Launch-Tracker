@@ -19,7 +19,7 @@ function LaunchCard({ launch }: { launch: Launch }) {
         <h2 className="text-xl font-semibold">{launch.name}</h2>
         <p className="text-sm text-gray-400">{launch.net}</p>
         <p className="text-sm text-gray-500">
-          {launch.pad.name}, {launch.pad.location.name}
+          {launch.launch_service_provider.name}, {launch.pad.name}, {launch.pad.location.name}
         </p>
         <p className="text-sm text-gray-500 font-medium">
           {launch.mission?.type}
